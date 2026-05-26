@@ -1,0 +1,27 @@
+---
+
+# jenkins variables
+project_name: docker-clion
+external_type: na
+custom_version_command: "curl -sL https://mirror.rackspace.com/archlinux/extra/os/x86_64/extra.db | tar tzf - | awk -F '(-|/)' '/^clion-/ {print $2; exit}'"
+release_type: stable
+release_tag: latest
+ls_branch: master
+repo_vars:
+  - BUILD_VERSION_ARG = 'CLION_VERSION'
+  - LS_USER = 'linuxserver'
+  - LS_REPO = 'docker-clion'
+  - CONTAINER_NAME = 'clion'
+  - DOCKERHUB_IMAGE = 'linuxserver/clion'
+  - DEV_DOCKERHUB_IMAGE = 'lsiodev/clion'
+  - PR_DOCKERHUB_IMAGE = 'lspipepr/clion'
+  - DIST_IMAGE = 'arch'
+  - MULTIARCH = 'false'
+  - CI = 'true'
+  - CI_WEB = 'true'
+  - CI_PORT = '3001'
+  - CI_SSL = 'true'
+  - CI_DELAY = '120'
+  - CI_DOCKERENV = 'TZ=US/Pacific'
+  - CI_AUTH = 'user:password'
+  - CI_WEBPATH = ''
